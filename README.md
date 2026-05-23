@@ -1,9 +1,5 @@
 # BLT-OSSH 🎩✨
-<<<<<<< HEAD
 **Open Source Sorting Hat** - a magical recommendation engine with special powers that analyzes your GitHub profile and sorts you into the right open source community
-=======
-
-**Open-Source Sorting Hat** — AI-powered GitHub profile analyzer that recommends perfect open-source projects for contributors.
 
 [![OWASP BLT](https://img.shields.io/badge/OWASP-BLT-blue)](https://github.com/OWASP-BLT/BLT) [![GitHub Pages](https://img.shields.io/badge/Live-Demo-green)](https://owasp-blt.github.io/BLT-OSSH/)
 
@@ -16,10 +12,9 @@
 - [How It Works](#how-it-works)
 - [Usage](#usage)
 - [Contributing](#contributing)
->>>>>>> origin/main
 
 ## Overview
-OSSH (Open-Source Sorting Hat) is a tool that analyzes your GitHub profile and recommends personalized open-source projects, communities, learning resources, and discussion channels based on your skills, interests, and activity.
+OSSH (Open Source Sorting Hat) is a magical tool that analyzes your GitHub profile and recommends personalized open source projects, communities, learning resources, and discussion channels based on your skills, interests, and activity.
 
 ## Features
 
@@ -35,7 +30,7 @@ OSSH (Open-Source Sorting Hat) is a tool that analyzes your GitHub profile and r
 - **Filter & Search** - Find developers by experience level, skills, or location
 
 ### 🎯 Personalized Recommendations
-- Open-source projects matching your tech stack
+- Open source projects matching your tech stack
 - Developer communities and organizations
 - Curated learning resources and articles
 - Active discussion channels (Discord, Slack, Reddit, etc.)
@@ -54,7 +49,6 @@ OSSH (Open-Source Sorting Hat) is a tool that analyzes your GitHub profile and r
 
 ## Architecture Overview
 
-<<<<<<< HEAD
 BLT-OSSH is more than a project-matching engine — it is a **magical recommendation engine with special powers** that helps contributors discover open-source projects, blogs, educational pathways, and communities tailored to their skills and interests by analyzing GitHub profiles and repository metadata.
 
 Within the **BLT (Bug Logging Tool) ecosystem**, OSSH acts as a **discovery layer** that surfaces relevant repositories, communities, blog content, and learning resources. It integrates with **BLT University** to offer educational pathways that adapt to your skill level and interests. It complements the main [BLT platform](https://github.com/OWASP-BLT/BLT) by focusing on contributor onboarding and project matching rather than bug reporting.
@@ -75,25 +69,6 @@ OSSH also sorts contributors into one of **four houses** based on their profile,
 3. **OSSH fetches and analyzes** — The frontend calls the GitHub API (and other data sources) to retrieve user profile, repositories, languages, topics, and activity events.
 4. **Matching logic runs client-side** — The `buildRecommendations()` function in `js/app.js` analyzes repository languages, contribution patterns, and metadata to identify relevant projects, blogs, and learning resources.
 5. **Recommendations are displayed** — Results include recommended repositories, communities, articles, discussion channels, and educational pathways.
-
-### Key Architectural Decisions
-
-- **No backend** — All logic runs in the browser. GitHub API is called directly from the client.
-- **Static deployment** — Hosted on GitHub Pages with no server-side dependencies.
-- **GitHub Issues as database** — Community profiles are stored as GitHub Issues with the `profile` label, enabling moderation and editing without a database.
-=======
-BLT-OSSH (Open-Source Sorting Hat) is a recommendation engine that helps contributors discover open-source projects that match their skills and interests by analyzing GitHub profiles and repository metadata. It goes beyond project matching to suggest information such as blogs, educational pathways, and integration with **BLT University** (educational resources for contributors).
-
-Within the **BLT (Bug Logging Tool) ecosystem**, BLT-OSSH acts as a **discovery layer** that helps users find relevant repositories, communities, and learning resources. It goes beyond project matching to suggest information such as blogs, educational pathways, and integration with **BLT University** (educational resources for contributors). Like the Sorting Hat, BLT-OSSH is designed to eventually sort contributors into four houses:
-
-| House | Focus |
-|-------|-------|
-| **Buggleton** | Bug hunting & security |
-| **Cybermoose** | Infrastructure & DevOps |
-| **Bufferbit** | Web & application development |
-| **Darkram** | Low-level & systems programming |
-
-It complements the main [BLT platform](https://github.com/OWASP-BLT/BLT) by focusing on contributor onboarding rather than bug reporting.
 
 ### Key Architectural Decisions
 
@@ -122,7 +97,6 @@ It complements the main [BLT platform](https://github.com/OWASP-BLT/BLT) by focu
 - **Communities**: Developer communities and organizations
 - **Articles**: Learning resources and documentation
 - **Discussions**: Forums, Discord servers, and chat platforms
->>>>>>> origin/main
 
 ## How Profiles Work
 
@@ -143,7 +117,6 @@ It complements the main [BLT platform](https://github.com/OWASP-BLT/BLT) by focu
 
 This section explains how contributors can run BLT-OSSH locally for development and testing.
 
-<<<<<<< HEAD
 ### Prerequisites
 
 - **Python 3.x** or **Node.js 18+** — For running a local static file server
@@ -151,11 +124,6 @@ This section explains how contributors can run BLT-OSSH locally for development 
 - **Modern web browser** — Chrome, Firefox, Safari, or Edge
 
 No environment variables or configuration files are required for basic local development. The app uses the public GitHub API without authentication.
-=======
-### Local Development
-
-**Prerequisites:** Python 3.x or Node.js 18+, Git, and a modern browser. No environment variables required.
->>>>>>> origin/main
 
 ### Setup
 
@@ -182,14 +150,11 @@ npm run dev
 
 Visit `http://localhost:8000` to load the main analysis page. Visit `http://localhost:8000/community.html` for the Community profiles page.
 
-<<<<<<< HEAD
 ### Configuration
 
 - **No `.env` or config files** — The app is fully static and requires no environment variables
 - **CORS** — GitHub API allows requests from any origin; no CORS configuration needed for local development
 
-=======
->>>>>>> origin/main
 ### Testing Workflow
 
 1. Run the local server as above
@@ -266,66 +231,12 @@ The system interacts with the **GitHub REST API** to retrieve user and repositor
 |----------|---------|
 | `GET https://api.github.com/users/{username}` | User profile data (name, bio, avatar, follower counts) |
 | `GET https://api.github.com/users/{username}/repos?sort=updated&per_page=100` | User repository list with languages and topics |
-<<<<<<< HEAD
 | `GET https://api.github.com/repos/{owner}/{repo}/issues?labels=profile&state=open` | Community profiles (stored as GitHub Issues) |
 | `GET https://api.github.com/users/{username}/events/public?per_page=100` | Contributor activity stream (commits, PRs, issues) for activity scoring |
-=======
-| `GET https://api.github.com/repos/{owner}/{repo}/issues?labels=profile&state=open` | Community profiles (used by workflow to generate `data/profiles.json`) |
-| `data/profiles.json` | Community profiles (static file; Community page loads this) |
-
-### Data Fetched
-
-- **User profile** — Avatar, bio, public repos count, followers, following
-- **Repositories** — Names, descriptions, languages, stars, fork status
-- **Languages used** — Extracted from repository metadata and weighted by frequency
-- **Community profiles** — Loaded from `data/profiles.json` (workflow populates it from GitHub Issues)
-
-### Rate Limits
-
-- **Unauthenticated requests**: 60 requests/hour per IP address
-- **Authenticated requests**: 5,000 requests/hour (if you add a token — not required for basic use)
-- The app makes exactly 2 requests per profile analysis (profile and repos), so casual use stays within limits
-- If rate limited, the app displays: *"GitHub API rate limit exceeded. Please wait a few minutes and try again."*
-
-## Community Profile Template
-
-Profiles are created as GitHub Issues using a structured template with these fields:
-
-- **GitHub Username** (required) - Your GitHub handle
-- **Display Name** (required) - How you want to be known
-- **Bio** (required) - Brief description about yourself
-- **Experience Level** (required) - Beginner, Intermediate, Advanced, or Expert
-- **Areas of Interest** (checkboxes) - Web Dev, Mobile Dev, AI/ML, Cybersecurity, DevOps, etc.
-- **Skills & Technologies** (required) - Comma-separated list (e.g., Python, JavaScript, React)
-- **Looking For** (required) - Your goals (e.g., collaboration, mentorship)
-- **Location** (optional) - Your geographical location
-- **Website/Portfolio** (optional) - Your personal website or portfolio link
-- **Twitter** (optional) - Handle without @
-- **LinkedIn** (optional) - LinkedIn profile URL (e.g., https://linkedin.com/in/yourprofile)
-
-### Pre-filled Profile Creation
-
-After analyzing your GitHub profile, the system automatically pre-fills:
-- Your GitHub username
-- Display name from your GitHub profile
-- Bio from GitHub (or primary language as fallback)
-- Skills extracted from your most-used languages
-- Looking for section with smart suggestions
->>>>>>> origin/main
 
 ### Additional APIs of Interest
 
-<<<<<<< HEAD
 These APIs can enrich recommendations with blog content, curated articles, and deeper repository insights:
-=======
-### For Users
-
-1. **Analyze Your Profile**
-   - Visit OSSH homepage
-   - Enter your GitHub username
-   - Click "Find My Projects"
-   - Explore personalized recommendations
->>>>>>> origin/main
 
 | API | Purpose |
 |-----|---------|
@@ -336,30 +247,23 @@ These APIs can enrich recommendations with blog content, curated articles, and d
 
 ### Data Fetched
 
-<<<<<<< HEAD
 - **User profile** — Avatar, bio, public repos count, followers, following
 - **Repositories** — Names, descriptions, languages, stars, fork status
 - **Languages used** — Extracted from repository metadata and weighted by frequency
-- **Community profiles** — Parsed from issue bodies on the Community page
+- **Community profiles** — Loaded from `data/profiles.json` (workflow populates it from GitHub Issues)
 - **Activity events** — Recent public events used to compute a contributor activity score
 
 ### Rate Limits
 
 - **Unauthenticated requests**: 60 requests/hour per IP address
 - **Authenticated requests**: 5,000 requests/hour (if you add a token — not required for basic use)
-- The app typically makes 2–3 requests per profile analysis, so casual use stays within limits
+- The app makes exactly 2 requests per profile analysis (profile and repos), so casual use stays within limits
 - If rate limited, the app displays: *"GitHub API rate limit exceeded. Please wait a few minutes and try again."*
 
 ### Authentication
 
 - **No authentication required** for basic usage — the app works with unauthenticated API calls
 - For higher rate limits or private repository access, you could add a GitHub token; this is not currently implemented in the static frontend
-=======
-## Features in Detail
-
-- See [Smart Matching Algorithm](#smart-matching-algorithm)
-- See [Community Features](#community-features)
-- See [Recommendation Categories](#recommendation-categories)
 
 ## Contributing
 
@@ -370,7 +274,6 @@ Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
->>>>>>> origin/main
 
 ## License
 
@@ -383,25 +286,5 @@ Part of OWASP BLT; follows its licensing terms.
 - [Create Your Profile](https://github.com/OWASP-BLT/BLT-OSSH/issues/new?template=user_profile.yml)
 - [Browse Community](https://owasp-blt.github.io/BLT-OSSH/community.html)
 
-<<<<<<< HEAD
-=======
-## Roadmap
-
-- [ ] AI-powered project recommendations using ML
-- [ ] Profile verification badges
-- [ ] Direct messaging between community members
-- [ ] Project collaboration matching
-- [ ] Mentorship program integration
-- [ ] Event calendar for community meetups
-- [ ] Skill endorsements
-- [ ] Advanced search with tags
-
-## Acknowledgments
-
-- OWASP Foundation
-- BLT Community
-- All contributors
-
->>>>>>> origin/main
 ---
 Made with ❤️ by the OWASP BLT Community
