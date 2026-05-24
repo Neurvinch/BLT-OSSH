@@ -78,8 +78,25 @@ form.addEventListener('submit', async (e) => {
     }
     const reposData = await reposResponse.json();
 
+    // Fetch contributor activity events for enhanced recommendations.
+    // Events API provides PushEvent (commits), PullRequestEvent, IssuesEvent
+    // to compute an activity score that helps rank repositories.
+    let eventsData = [];
+    try {
+      const eventsResponse = await fetch(
+        `https://api.github.com/users/${encodeURIComponent(username)}/events/public?per_page=100`,
+        { headers: { Accept: 'application/vnd.github+json' } }
+      );
+      if (eventsResponse.ok) {
+        eventsData = await eventsResponse.json();
+      }
+    } catch (err) {
+      // Graceful failure: continue without events; activity score will be 0
+      console.warn('Could not fetch contributor events:', err);
+    }
+
     // Build and display results
-    const data = await buildRecommendations(userData, reposData);
+    const data = await buildRecommendations(userData, reposData, eventsData);
     displayResults(data);
 
   } catch (error) {
@@ -268,12 +285,20 @@ function recommendGeneric(items, userTags, languageWeights, opts) {
     .slice(0, topN);
 }
 
-async function buildRecommendations(userData, repos) {
+async function buildRecommendations(userData, repos, eventsData = []) {
+  // Contributor activity signals: compute score from GitHub events
+  // PushEvent = commits (weight 2), PullRequestEvent = PRs (weight 3), IssuesEvent = issues (weight 1)
+  const pushEvents = eventsData.filter(e => e.type === 'PushEvent').length;
+  const pullRequestEvents = eventsData.filter(e => e.type === 'PullRequestEvent').length;
+  const issuesEvents = eventsData.filter(e => e.type === 'IssuesEvent').length;
+  const activityScore = (pushEvents * 2) + (pullRequestEvents * 3) + (issuesEvents * 1);
+
   const languageCounts = {};
   (repos || []).forEach(repo => {
     if (repo.language) languageCounts[repo.language] = (languageCounts[repo.language] || 0) + 1;
   });
   const languages = Object.keys(languageCounts).sort((a, b) => languageCounts[b] - languageCounts[a]).slice(0, 10);
+  const topLanguages = languages.slice(0, 3);
   const house = assignHouse(userData, repos || [], languages);
 
   let catalog;
@@ -296,6 +321,9 @@ async function buildRecommendations(userData, repos) {
     followers: userData.followers,
     following: userData.following,
     languages,
+    top_languages: topLanguages,
+    activity_score: activityScore,
+    activity_breakdown: { pushEvents, pullRequestEvents, issuesEvents },
   };
 
   const recommended_repos = recommendGeneric(catalog.repos, userTags, languageWeights, { topN: 6, usesLanguage: true });
@@ -405,6 +433,19 @@ function displayResults(data) {
   document.getElementById('user-repos').textContent = githubStats.public_repos || 0;
   document.getElementById('user-followers').textContent = githubStats.followers || 0;
   document.getElementById('user-following').textContent = githubStats.following || 0;
+
+  // Display Contributor Activity Score (from PushEvent, PullRequestEvent, IssuesEvent)
+  const activityScoreEl = document.getElementById('contributor-activity-score');
+  if (activityScoreEl) {
+    activityScoreEl.textContent = githubStats.activity_score ?? 0;
+  }
+
+  // Display Top Languages (contributor's main languages used for language match scoring)
+  const topLanguagesEl = document.getElementById('top-languages-list');
+  if (topLanguagesEl) {
+    const topLangs = githubStats.top_languages || [];
+    topLanguagesEl.textContent = topLangs.length ? topLangs.join(', ') : 'No language data';
+  }
 
   // Display languages
   const languagesContainer = document.getElementById('user-languages');
