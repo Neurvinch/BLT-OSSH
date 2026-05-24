@@ -216,7 +216,7 @@ The system interacts with the **GitHub REST API** to retrieve user and repositor
 | `GET https://api.github.com/users/{username}` | User profile data (name, bio, avatar, follower counts) |
 | `GET https://api.github.com/users/{username}/repos?sort=updated&per_page=100` | User repository list with languages and topics |
 | `GET https://api.github.com/repos/{owner}/{repo}/issues?labels=profile&state=open` | Community profiles (used by workflow to generate `data/profiles.json`) |
-| `http://export.arxiv.org/api/query?` | Research papers (fetched by workflow, filtered by category and date) |
+| `https://export.arxiv.org/api/query` | Research papers (fetched by workflow, filtered by category and date) |
 | `data/profiles.json` | Community profiles (static file; Community page loads this) |
 | `data/ossh_catalog.json` | Recommendation catalog (repos, communities, articles, papers, channels) |
 
