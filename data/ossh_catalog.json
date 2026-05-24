@@ -47235,6 +47235,7 @@
   ],
   "research_papers": [
     {
+<<<<<<< Updated upstream
       "title": "Attention Is All You Need",
       "authors": ["Ashish Vaswani", "Noam Shazeer", "Parmar Aditya"],
       "summary": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
@@ -47321,6 +47322,357 @@
       "pdf_url": "https://arxiv.org/pdf/2003.00911.pdf",
       "source": "arXiv",
       "tags": ["graph-neural-networks", "machine-learning", "deep-learning", "python", "neural-networks", "learning", "ai", "research"]
+=======
+      "title": "FAME: Failure-Aware Mixture-of-Experts for Message-Level Log Anomaly Detection",
+      "authors": [
+        "Huanchi Wang",
+        "Zihang Huang",
+        "Yifang Tian"
+      ],
+      "summary": "Production systems generate millions of log lines daily, yet most anomaly detectors operate at the session or window-level, flagging groups of lines rather than identifying the specific message responsible. This coarse granularity forces operators to inspect many routine lines per alert. Message-level detection offers finer granularity, but remains challenging. A single event template may correspond to both normal and anomalous messages, failures arise from heterogeneous subsystems, and line-lev",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22779",
+      "url": "https://arxiv.org/abs/2605.22779",
+      "pdf_url": "https://arxiv.org/pdf/2605.22779.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "machine-learning"
+      ]
+    },
+    {
+      "title": "HarnessAPI: A Skill-First Framework for Unified Streaming APIs and MCP Tools",
+      "authors": [
+        "Edwin Jose"
+      ],
+      "summary": "Every Python function deployed as an LLM tool must today exist in two forms: an HTTP endpoint for human-facing clients and CI pipelines, and an MCP tool registration for agent runtimes such as Claude and Cursor. These representations share business logic yet diverge in all the surrounding machinery (routing, validation, serialisation, streaming, and schema maintenance), and they drift apart as the underlying code evolves. We present HarnessAPI, a Python framework that eliminates this duplication",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22733",
+      "url": "https://arxiv.org/abs/2605.22733",
+      "pdf_url": "https://arxiv.org/pdf/2605.22733.pdf",
+      "source": "arXiv",
+      "tags": [
+        "artificial-intelligence",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "Contractual Skills: A GovernSpec Design Framework for Enterprise AI Agents",
+      "authors": [
+        "Ting Liu"
+      ],
+      "summary": "Skills are increasingly used to package agent instructions, workflows, scripts, and reference materials. In enterprise settings, however, skills often need to express more than task guidance: they must make goals, input boundaries, permissions, evidence requirements, output contracts, quality criteria, verification steps, human approval points, and handoff rules inspectable. This paper proposes contractual skills, a GovernSpec-inspired design framework for organizing SKILL.md files as readable t",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22634",
+      "url": "https://arxiv.org/abs/2605.22634",
+      "pdf_url": "https://arxiv.org/pdf/2605.22634.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "artificial-intelligence"
+      ]
+    },
+    {
+      "title": "Innovations in Cardless Artificial Intelligence Banking: A Comprehensive Framework for Cyber Secure and Fraud Mitigation using Machine Learning Algorithms",
+      "authors": [
+        "Md Israfeel"
+      ],
+      "summary": "The advent of cardless artificial intelligence (AI) banking heralds a paradigm shift in the financial landscape, offering users unprecedented security and convenience. This paper outlines a comprehensive framework designed to enhance cybersecurity, introduce auto-generated virtual cards, and mitigate fraud risks within cardless AI banking systems. The framework envisions a future banking architecture that employs AI-powered data cryptography to create secure virtual cards for seamless transactio",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22604",
+      "url": "https://arxiv.org/abs/2605.22604",
+      "pdf_url": "https://arxiv.org/pdf/2605.22604.pdf",
+      "source": "arXiv",
+      "tags": [
+        "cryptography",
+        "artificial-intelligence",
+        "machine-learning",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "SynAE: A Framework for Measuring the Quality of Synthetic Data for Tool-Calling Agent Evaluations",
+      "authors": [
+        "Shuaiqi Wang",
+        "Aadyaa Maddi",
+        "Zinan Lin"
+      ],
+      "summary": "Today, tool-calling agents are commonly evaluated or tested on static datasets of execution traces, including input commands, agent responses, and associated tool calls. However, internal production datasets are often insufficient or unusable for testing; for example, they may contain sensitive or proprietary data, or they may be too sparse to support comprehensive testing (especially pre-deployment). In these settings, practitioners are increasingly replacing or augmenting real datasets with sy",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22564",
+      "url": "https://arxiv.org/abs/2605.22564",
+      "pdf_url": "https://arxiv.org/pdf/2605.22564.pdf",
+      "source": "arXiv",
+      "tags": [
+        "natural-language-processing",
+        "machine-learning",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "Why Are Agentic Pull Requests Merged or Rejected? An Empirical Study",
+      "authors": [
+        "Sien Reeve O. Peralta",
+        "Fumika Hoshi",
+        "Hironori Washizaki"
+      ],
+      "summary": "AI coding agents increasingly submit pull requests (Agentic-PRs) to open-source repositories, yet their performance is commonly assessed using merge and rejection outcomes alone. We hypothesized that these outcome labels do not reliably reflect agent capability without considering review interactions. To test this, we conducted a decision-oriented analysis of 11,048 closed Agentic Pull Requests, refined to 9,799 human-reviewed PRs, and manually inspected 717 representative cases to recover decis",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22534",
+      "url": "https://arxiv.org/abs/2605.22534",
+      "pdf_url": "https://arxiv.org/pdf/2605.22534.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "\"Refactoring Runaway\": Understanding and Mitigating Tangled Refactorings in Coding Agents for Issue Resolution",
+      "authors": [
+        "Zhao Tian",
+        "Zifan Zhang",
+        "Tao Xiao"
+      ],
+      "summary": "Recent advances in coding agents have shown remarkable progress in software issue resolution. In practice, real-world issues are typically bug fixes or feature requests in which human developers naturally incorporate refactoring as part of the resolution process, resulting in tangled refactoring. Since LLMs are trained on large-scale open-source repositories, coding agents may inherit such behaviors. In this paper, we conduct an empirical study on Multi-SWE-bench, analyzing 3,691 valid patches g",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22526",
+      "url": "https://arxiv.org/abs/2605.22526",
+      "pdf_url": "https://arxiv.org/pdf/2605.22526.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "The Neglected Baseline in Model Interpretation",
+      "authors": [
+        "Yongjin Cui",
+        "Xiaohui Fan"
+      ],
+      "summary": "We observe that existing model interpretation methods generally ignore the baseline, and such neglect often results in imprecise or even incorrect interpretation. In this paper, we reformulate the task of model interpretation and the interpretation principles for model interpretation results to demonstrate the importance of the baseline. We further unify gradient-based methods, Integrated Gradients (IG) methods, and Taylor expansion, clarifying the connections among them and explicitly identifyi",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22417",
+      "url": "https://arxiv.org/abs/2605.22417",
+      "pdf_url": "https://arxiv.org/pdf/2605.22417.pdf",
+      "source": "arXiv",
+      "tags": [
+        "computer-vision",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "VeriScale: Adversarial Test-Suite Scaling for Verifiable Code Generation",
+      "authors": [
+        "Yifan Bai",
+        "Xiaoyang Liu",
+        "Zihao Mou"
+      ],
+      "summary": "As large language models (LLMs) are increasingly deployed for software engineering, constructing high-quality benchmarks is crucial for evaluating not just the functional correctness, but also the formal verifiability of generated code. However, existing benchmarks are limited by the quantity and quality of positive and negative test cases, leading to an overestimation of model capabilities in generating specifications and implementations. To address this, we propose VeriScale, a novel framework",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22368",
+      "url": "https://arxiv.org/abs/2605.22368",
+      "pdf_url": "https://arxiv.org/pdf/2605.22368.pdf",
+      "source": "arXiv",
+      "tags": [
+        "machine-learning",
+        "artificial-intelligence",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "At What Cost? Software Developers' Well-Being in the Age of GenAI",
+      "authors": [
+        "Mariam Guizani",
+        "Maduka Subasinghage",
+        "Sherlock A. Licorish"
+      ],
+      "summary": "Generative Artificial Intelligence (GenAI) is rapidly reshaping software development, with growing emphasis on accelerating productivity and optimizing performance. However, excessive focus on such dimensions risks overlooking the critical implications for developer well-being. GenAI tools can amplify cognitive load, introduce new forms of oversight labor, and escalate expectations around output and pace, contributing to stress, burnout, and diminished work-life balance. The GenAI movement is al",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22349",
+      "url": "https://arxiv.org/abs/2605.22349",
+      "pdf_url": "https://arxiv.org/pdf/2605.22349.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "Sibyl-AutoResearch: Autonomous Research Needs Self-Evolving Trial-and-Error Harnesses, Not Paper Generators",
+      "authors": [
+        "Chengcheng Wang",
+        "Qinhua Xie",
+        "Wei He"
+      ],
+      "summary": "Autonomous research systems increasingly make the scientific workflow executable: agents can propose ideas, run code, inspect results, and draft papers. But executable workflows do not by themselves produce research judgment. We analyze where current systems lose trial experience: weak evidence becomes prose, pilot signals become broad claims, memory remains textual, and recurring process failures do not change later behavior. We introduce Sibyl-AutoResearch, a self-evolving AutoResearch framewo",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22343",
+      "url": "https://arxiv.org/abs/2605.22343",
+      "pdf_url": "https://arxiv.org/pdf/2605.22343.pdf",
+      "source": "arXiv",
+      "tags": [
+        "ma",
+        "artificial-intelligence",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "Benchmarking Autonomous Agents against Temporal, Spatial, and Semantic Evasions",
+      "authors": [
+        "Jianan Ma",
+        "Xiaohu Du",
+        "Ruixiao Lin"
+      ],
+      "summary": "As autonomous agents (e.g., OpenClaw) increasingly operate with deep system-level privileges to execute complex tasks, they introduce severe, unmitigated security risks. Current vulnerability analyses overwhelmingly focus on single-turn, stateless behaviors, overlooking the expanded attack surface inherent in stateful, multi-turn interactions and dynamic tool invocations. In this paper, we propose a novel, multi-dimensional evasion framework targeting LLM-based agent systems. We introduce three ",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22321",
+      "url": "https://arxiv.org/abs/2605.22321",
+      "pdf_url": "https://arxiv.org/pdf/2605.22321.pdf",
+      "source": "arXiv",
+      "tags": [
+        "cryptography",
+        "artificial-intelligence",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "An Architecture for Decentralised Deployment and Operation of Blockchain Applications",
+      "authors": [
+        "Fabian Stiehle",
+        "Kirill Inozemtsev",
+        "Ingo Weber"
+      ],
+      "summary": "Blockchains and distributed ledger technologies allow the operation of manifold decentralised applications (dApps). Such applications are based on smart contracts, a programmable abstraction that is executed in a decentralised manner. To ensure the correctness of smart contracts, blockchain application developers rely on DevOps practices such as automated testing and continuous integration and deployment. However, such infrastructure is often controlled by single entities. For larger blockchain ",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22239",
+      "url": "https://arxiv.org/abs/2605.22239",
+      "pdf_url": "https://arxiv.org/pdf/2605.22239.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "SWE-Mutation: Can LLMs Generate Reliable Test Suites in Software Engineering?",
+      "authors": [
+        "Yuxuan Sun",
+        "Yuze Zhao",
+        "Yufeng Wang"
+      ],
+      "summary": "Evaluating software engineering capabilities has become a core component of modern large language models (LLMs); however, the key bottleneck hindering further scaling lies not in the scarcity of high-quality solutions, but in the lack of high-quality test suites. Test suites are indispensable both for synthesizing program repair trajectories and for providing precise feedback signals in reinforcement learning. Unfortunately, due to the high cost and difficulty of annotation, high-quality test su",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22175",
+      "url": "https://arxiv.org/abs/2605.22175",
+      "pdf_url": "https://arxiv.org/pdf/2605.22175.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "artificial-intelligence"
+      ]
+    },
+    {
+      "title": "Astragalus: Automatic Configuration Repair for Production Networks",
+      "authors": [
+        "Zhenrong Gu",
+        "Peng Zhang",
+        "Xing Feng"
+      ],
+      "summary": "Network configurations are prone to errors, which can lead to catastrophic service outages. A tool that can achieve automatic configuration repair (ACR) is highly desired by operators. Existing tools for ACR follow a semantic-driven approach: they model network semantics as a set of SMT constraints, and solve them for a location or fix of the error. Due to the complex semantics of networks, constructing and solving these constraints can be prohibitively expensive, making these tools neither gene",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22092",
+      "url": "https://arxiv.org/abs/2605.22092",
+      "pdf_url": "https://arxiv.org/pdf/2605.22092.pdf",
+      "source": "arXiv",
+      "tags": [
+        "ni",
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "Automated Repair of TEE Partitioning Issues via DSL-Guided and LLM-Assisted Patching",
+      "authors": [
+        "Chengyan Ma",
+        "Jieke Shi",
+        "Ruidong Han"
+      ],
+      "summary": "Trusted Execution Environments (TEEs) provide hardware-based isolation to protect sensitive data and computations from potentially compromised operating systems (OS). However, TEE applications inevitably interact with the untrusted OS through SDK interfaces, and improper partitioning can introduce severe vulnerabilities such as data leakage and code injection. While prior work has proposed static analysis tools to detect such issues, automated repair remains largely unexplored. This problem is p",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22087",
+      "url": "https://arxiv.org/abs/2605.22087",
+      "pdf_url": "https://arxiv.org/pdf/2605.22087.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "cryptography"
+      ]
+    },
+    {
+      "title": "Finding Missing Input Validation in TEEs via LLM-Assisted Symbolic Execution",
+      "authors": [
+        "Chengyan Ma",
+        "Jieke Shi",
+        "Ruidong Han"
+      ],
+      "summary": "Trusted Execution Environments (TEEs) provide hardware-enforced isolation that protects sensitive code and data from untrusted software. Despite their strong security guarantees, analyzing TEE applications remains challenging due to the high cost and complexity of configuring complete TEE build and runtime environments, as well as the limited observability imposed by hardware isolation. This paper presents SymTEE, a novel large language model (LLM)-assisted symbolic execution framework for detec",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.22058",
+      "url": "https://arxiv.org/abs/2605.22058",
+      "pdf_url": "https://arxiv.org/pdf/2605.22058.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "cryptography"
+      ]
+    },
+    {
+      "title": "From Patches to Trajectories: Privileged Process Supervision for Software-Engineering Agents",
+      "authors": [
+        "Murong Ma",
+        "Tianyu Chen",
+        "Yun Lin"
+      ],
+      "summary": "Supervised fine-tuning (SFT) on long teacher trajectories is the dominant way to instill investigation and reasoning in open software-engineering (SWE) agents. Since every retained response becomes an imitation target, the student inherits the final outcome and intermediate flaws, including ungrounded leaps and redundant loops. High-quality training data must be effective(each step is grounded and narrows the agent's epistemic gap to the correct fix) and efficient(each step is information-bearin",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.21996",
+      "url": "https://arxiv.org/abs/2605.21996",
+      "pdf_url": "https://arxiv.org/pdf/2605.21996.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering",
+        "artificial-intelligence"
+      ]
+    },
+    {
+      "title": "Deterministic vs. Probabilistic Summarisation: An Empirical Trade-off Study in Design Pattern Centric Java Code",
+      "authors": [
+        "Najam Nazar",
+        "Christoph Treude"
+      ],
+      "summary": "Background: Automated code summarisation supports program comprehension and documentation, yet the relative strengths and limitations of deterministic (heuristic-based) and probabilistic (LLM-based) pipelines remain unclear. Aims: This paper presents a controlled empirical comparison of these paradigms for intent-oriented design-pattern code summarisation. Method: Using design-pattern-centric Java code as a structured testbed (150 files from three open-source repositories covering nine patterns)",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.21943",
+      "url": "https://arxiv.org/abs/2605.21943",
+      "pdf_url": "https://arxiv.org/pdf/2605.21943.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+    },
+    {
+      "title": "PITMuS: A Tool for Automated Bug Dataset Generation via Source-Level Mutant Reconstruction",
+      "authors": [
+        "Tasfia Tasnim",
+        "Soneya Binta Hossain"
+      ],
+      "summary": "LLM-based software engineering increasingly depends on executable, context-rich bug artifacts: paired correct and buggy code, methods under test (MUTs), documentation, and metadata. These artifacts support the training and evaluation of automated bug localization and repair techniques, testing and test oracle generation methods, and documentation-driven automation. Although curated benchmarks (e.g., Defects4J) remain valuable, they are static and increasingly vulnerable to contamination as code ",
+      "published": "2026-05-21",
+      "arxiv_id": "2605.21930",
+      "url": "https://arxiv.org/abs/2605.21930",
+      "pdf_url": "https://arxiv.org/pdf/2605.21930.pdf",
+      "source": "arXiv",
+      "tags": [
+        "software-engineering"
+      ]
+>>>>>>> Stashed changes
     }
   ]
 }
