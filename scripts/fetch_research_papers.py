@@ -61,6 +61,7 @@ def dedupe_tags(tags):
 def fetch_arxiv_papers():
     """Fetch papers from arXiv using API queries."""
     papers = {}
+    failed_queries = 0
     now = datetime.utcnow()
     lower_bound = (now - timedelta(days=30)).strftime("%Y%m%d%H%M")
     upper_bound = now.strftime("%Y%m%d%H%M")
@@ -125,8 +126,13 @@ def fetch_arxiv_papers():
 
         except requests.exceptions.RequestException as exc:
             logger.error("Request failed for query '%s': %s", query, exc)
+            failed_queries += 1
         except Exception as exc:
             logger.error("Unexpected error for query '%s': %s", query, exc)
+            failed_queries += 1
+
+    if failed_queries == len(SEARCH_QUERIES):
+        raise RuntimeError("Failed to fetch research papers: all arXiv queries failed")
 
     return list(papers.values())[:MAX_PAPERS]
 
